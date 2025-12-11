@@ -18,20 +18,73 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Popup Promo -->
+    <!-- Popup Promo Premium -->
     <div class="popup-overlay" id="promoPopup">
         <div class="popup-content">
-            <button class="popup-close" id="popupClose">&times;</button>
-            <img src="assets/anonce pop-up card/vos burger royal et délicieux sont disponibles. réserver.jpg" alt="Burger Royal" class="popup-image">
+            <!-- Particules décoratives -->
+            <div class="popup-particles">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <!-- Bouton fermer -->
+            <button class="popup-close" id="popupClose">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Badge promo -->
+            <div class="popup-badge">
+                <span class="badge-icon">🔥</span>
+                <span class="badge-text">Nouveau</span>
+            </div>
+
+            <!-- Image avec overlay gradient -->
+            <div class="popup-image-wrapper">
+                <img src="assets/anonce pop-up card/vos burger royal et délicieux sont disponibles. réserver.jpg" alt="Burger Royal" class="popup-image">
+                <div class="popup-image-overlay"></div>
+            </div>
+
+            <!-- Contenu -->
             <div class="popup-body">
-                <h3 class="popup-title">Burger Royal</h3>
-                <p class="popup-text">Nos délicieux burgers gourmets sont disponibles ! Viande de qualité, ingrédients frais et saveurs uniques.</p>
+                <div class="popup-tag">
+                    <span class="popup-tag-line"></span>
+                    <span>Édition Limitée</span>
+                    <span class="popup-tag-line"></span>
+                </div>
+
+                <h3 class="popup-title">
+                    <span class="title-line">Burger</span>
+                    <span class="title-line title-accent">Royal</span>
+                </h3>
+
+                <p class="popup-text">Découvrez notre création signature : viande premium, fromage affiné, sauce maison et ingrédients frais sélectionnés.</p>
+
+                <div class="popup-features">
+                    <div class="popup-feature">
+                        <span class="feature-icon">🥩</span>
+                        <span>Viande Premium</span>
+                    </div>
+                    <div class="popup-feature">
+                        <span class="feature-icon">🧀</span>
+                        <span>Fromage Affiné</span>
+                    </div>
+                    <div class="popup-feature">
+                        <span class="feature-icon">🌿</span>
+                        <span>Produits Frais</span>
+                    </div>
+                </div>
+
                 <a href="#contact" class="popup-btn" id="popupCta">
-                    Réserver maintenant
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+                    <span class="btn-text">Commander maintenant</span>
+                    <span class="btn-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
                 </a>
+
+                <p class="popup-hint">Cliquez ou appuyez sur Échap pour fermer</p>
             </div>
         </div>
     </div>
@@ -250,26 +303,66 @@
 
     <!-- Menu Section -->
     <section class="menu" id="carte">
+        <!-- Éléments décoratifs -->
+        <div class="menu-decor">
+            <div class="menu-decor-circle"></div>
+            <div class="menu-decor-line"></div>
+        </div>
+
         <div class="menu-header">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-number">02</span>
-                    <span class="section-label">La Carte</span>
+                <div class="menu-header-content">
+                    <div class="menu-header-left">
+                        <div class="section-header">
+                            <span class="section-number">02</span>
+                            <span class="section-label">La Carte</span>
+                        </div>
+                        <h2 class="section-title section-title-light">
+                            <span class="title-reveal">Saveurs</span>
+                            <span class="title-reveal text-stroke-light">d'exception</span>
+                        </h2>
+                    </div>
+                    <div class="menu-header-right">
+                        <p class="menu-intro">Découvrez une sélection de plats raffinés, préparés avec passion par notre chef à partir d'ingrédients frais et locaux.</p>
+                        <div class="menu-stats">
+                            <div class="menu-stat">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Plats Signature</span>
+                            </div>
+                            <div class="menu-stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Frais & Local</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="section-title section-title-light">
-                    Saveurs<br>
-                    <span class="text-stroke-light">d'exception</span>
-                </h2>
             </div>
         </div>
 
-        <!-- Menu Categories -->
-        <div class="menu-categories">
-            <button class="category-tab active" data-category="all">Tout</button>
-            <button class="category-tab" data-category="breakfast">Petit-Déj</button>
-            <button class="category-tab" data-category="lunch">Déjeuner</button>
-            <button class="category-tab" data-category="drinks">Boissons</button>
-            <button class="category-tab" data-category="desserts">Desserts</button>
+        <!-- Menu Categories Premium -->
+        <div class="menu-categories-wrapper">
+            <div class="menu-categories">
+                <button class="category-tab active" data-category="all">
+                    <span class="tab-icon">✨</span>
+                    <span class="tab-text">Tout</span>
+                </button>
+                <button class="category-tab" data-category="breakfast">
+                    <span class="tab-icon">🌅</span>
+                    <span class="tab-text">Petit-Déj</span>
+                </button>
+                <button class="category-tab" data-category="lunch">
+                    <span class="tab-icon">🍽️</span>
+                    <span class="tab-text">Déjeuner</span>
+                </button>
+                <button class="category-tab" data-category="drinks">
+                    <span class="tab-icon">🍹</span>
+                    <span class="tab-text">Boissons</span>
+                </button>
+                <button class="category-tab" data-category="desserts">
+                    <span class="tab-icon">🍰</span>
+                    <span class="tab-text">Desserts</span>
+                </button>
+            </div>
         </div>
 
         <!-- Menu Slider -->
