@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brasserie du Parc - L'élégance du Plateau à Abidjan. Restaurant gastronomique moderne avec cuisine ouverte, petit-déjeuner et déjeuner.">
+    <title>Brasserie du Parc | L'élégance du Plateau - Abidjan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="assets/logo/logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor personnalisé -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Popup Promo -->
+    <div class="popup-overlay" id="promoPopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <img src="assets/anonce pop-up card/vos burger royal et délicieux sont disponibles. réserver.jpg" alt="Burger Royal" class="popup-image">
+            <div class="popup-body">
+                <h3 class="popup-title">Burger Royal</h3>
+                <p class="popup-text">Nos délicieux burgers gourmets sont disponibles ! Viande de qualité, ingrédients frais et saveurs uniques.</p>
+                <a href="#contact" class="popup-btn" id="popupCta">
+                    Réserver maintenant
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/logo/logo.png" alt="Logo">
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <span class="loader-text">Chargement de l'expérience...</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo/logo.png" alt="Brasserie du Parc">
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#accueil" class="nav-link active" data-text="Accueil">Accueil</a>
+                <a href="#concept" class="nav-link" data-text="Concept">Concept</a>
+                <a href="#carte" class="nav-link" data-text="La Carte">La Carte</a>
+                <a href="#espace" class="nav-link" data-text="L'Espace">L'Espace</a>
+                <a href="#moments" class="nav-link" data-text="Moments">Moments</a>
+                <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+            </div>
+
+            <div class="nav-right">
+                <a href="tel:+22527202830 61" class="nav-phone">
+                    <span class="phone-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                    </span>
+                    <span class="phone-text">Réserver</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile Fullscreen -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="#accueil" class="mobile-link">Accueil</a>
+                <a href="#concept" class="mobile-link">Concept</a>
+                <a href="#carte" class="mobile-link">La Carte</a>
+                <a href="#espace" class="mobile-link">L'Espace</a>
+                <a href="#moments" class="mobile-link">Moments</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact">
+                    <p>27 20 28 30 61</p>
+                    <p>07 19 48 06 10</p>
+                </div>
+                <div class="mobile-hours">
+                    <p>Lun - Ven</p>
+                    <p>7h30 - 19h00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <img src="assets/hero background image.jpg" alt="Brasserie du Parc Interior" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="tag-line"></span>
+                <span class="tag-text">Restaurant & Brasserie</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-word" data-aos="title">Brasserie</span>
+                <span class="title-word title-italic" data-aos="title">du Parc</span>
+            </h1>
+
+            <p class="hero-tagline">L'élégance du Plateau</p>
+
+            <div class="hero-info">
+                <div class="info-block">
+                    <span class="info-label">Horaires</span>
+                    <span class="info-value">7h30 — 19h00</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-block">
+                    <span class="info-label">Jours</span>
+                    <span class="info-value">Lundi — Vendredi</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#carte" class="btn-primary">
+                    <span class="btn-text">Explorer la carte</span>
+                    <span class="btn-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#contact" class="btn-secondary">Réserver</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+
+        <div class="hero-socials">
+            <a href="#" class="social-link">Fb</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Wa</a>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>Petit-déjeuner</span>
+            <span class="marquee-dot"></span>
+            <span>Déjeuner</span>
+            <span class="marquee-dot"></span>
+            <span>Cuisine Ouverte</span>
+            <span class="marquee-dot"></span>
+            <span>Cocktails</span>
+            <span class="marquee-dot"></span>
+            <span>Petit-déjeuner</span>
+            <span class="marquee-dot"></span>
+            <span>Déjeuner</span>
+            <span class="marquee-dot"></span>
+            <span>Cuisine Ouverte</span>
+            <span class="marquee-dot"></span>
+            <span>Cocktails</span>
+            <span class="marquee-dot"></span>
+        </div>
+    </div>
+
+    <!-- Concept Section -->
+    <section class="concept" id="concept">
+        <div class="container">
+            <div class="concept-grid">
+                <div class="concept-left">
+                    <div class="concept-images">
+                        <div class="concept-img concept-img-1">
+                            <img src="assets/our place/our local 1.jpg" alt="Notre espace">
+                        </div>
+                        <div class="concept-img concept-img-2">
+                            <img src="assets/déjeuner/tartare exotique.jpg" alt="Tartare exotique">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-right">
+                    <div class="section-header">
+                        <span class="section-number">01</span>
+                        <span class="section-label">Notre Concept</span>
+                    </div>
+
+                    <h2 class="section-title">
+                        Une expérience<br>
+                        <span class="text-stroke">gastronomique</span><br>
+                        unique
+                    </h2>
+
+                    <p class="concept-text">
+                        Au cœur du Plateau, la Brasserie du Parc réinvente l'art de la table.
+                        Notre cuisine ouverte vous invite à découvrir le spectacle de la création
+                        culinaire dans un cadre contemporain où le terracotta rencontre la végétation luxuriante.
+                    </p>
+
+                    <div class="concept-features">
+                        <div class="feature">
+                            <span class="feature-number">01</span>
+                            <div class="feature-content">
+                                <h4>Cuisine Ouverte</h4>
+                                <p>Assistez à la magie de la préparation</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-number">02</span>
+                            <div class="feature-content">
+                                <h4>Produits Frais</h4>
+                                <p>Sélection rigoureuse chaque matin</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-number">03</span>
+                            <div class="feature-content">
+                                <h4>Cadre Unique</h4>
+                                <p>Design contemporain & végétal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="carte">
+        <div class="menu-header">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <span class="section-label">La Carte</span>
+                </div>
+                <h2 class="section-title section-title-light">
+                    Saveurs<br>
+                    <span class="text-stroke-light">d'exception</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Menu Categories -->
+        <div class="menu-categories">
+            <button class="category-tab active" data-category="all">Tout</button>
+            <button class="category-tab" data-category="breakfast">Petit-Déj</button>
+            <button class="category-tab" data-category="lunch">Déjeuner</button>
+            <button class="category-tab" data-category="drinks">Boissons</button>
+            <button class="category-tab" data-category="desserts">Desserts</button>
+        </div>
+
+        <!-- Menu Slider -->
+        <div class="menu-slider">
+            <div class="menu-track" id="menuTrack">
+                <!-- Breakfast -->
+                <div class="menu-item" data-category="breakfast">
+                    <div class="menu-item-img">
+                        <img src="assets/petit déjeuner/morning delight.jpg" alt="Morning Delight">
+                        <span class="item-tag">Signature</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Petit-Déjeuner</span>
+                        <h3 class="item-title">Morning Delight</h3>
+                        <p class="item-desc">Viennoiseries fraîches, fruits de saison, café premium</p>
+                        <span class="item-price">8 500 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="breakfast">
+                    <div class="menu-item-img">
+                        <img src="assets/petit déjeuner/gourmande.jpg" alt="Formule Gourmande">
+                        <span class="item-tag">Best-seller</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Petit-Déjeuner</span>
+                        <h3 class="item-title">Formule Gourmande</h3>
+                        <p class="item-desc">Œufs, bacon croustillant, pancakes moelleux</p>
+                        <span class="item-price">12 000 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="breakfast">
+                    <div class="menu-item-img">
+                        <img src="assets/petit déjeuner/café.jpg" alt="Café Premium">
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Petit-Déjeuner</span>
+                        <h3 class="item-title">Café Premium</h3>
+                        <p class="item-desc">Grand cru torréfié, servi avec mignardises</p>
+                        <span class="item-price">3 500 F</span>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="menu-item" data-category="lunch">
+                    <div class="menu-item-img">
+                        <img src="assets/déjeuner/tartare exotique.jpg" alt="Tartare Exotique">
+                        <span class="item-tag">Chef's Special</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Déjeuner</span>
+                        <h3 class="item-title">Tartare Exotique</h3>
+                        <p class="item-desc">Bœuf sélectionné, épices locales, accompagnements raffinés</p>
+                        <span class="item-price">18 500 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="lunch">
+                    <div class="menu-item-img">
+                        <img src="assets/déjeuner/pâte fraîches.jpg" alt="Pâtes Fraîches">
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Déjeuner</span>
+                        <h3 class="item-title">Pâtes Fraîches</h3>
+                        <p class="item-desc">Tagliatelles maison, sauce crémeuse aux champignons</p>
+                        <span class="item-price">14 000 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="lunch">
+                    <div class="menu-item-img">
+                        <img src="assets/déjeuner/viande grillée.jpg" alt="Grillade Royale">
+                        <span class="item-tag">Premium</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Déjeuner</span>
+                        <h3 class="item-title">Grillade Royale</h3>
+                        <p class="item-desc">Entrecôte maturée, légumes grillés, sauce poivre vert</p>
+                        <span class="item-price">22 000 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="lunch">
+                    <div class="menu-item-img">
+                        <img src="assets/déjeuner/déjeuner exceptionnel.jpg" alt="Menu Dégustation">
+                        <span class="item-tag">Exclusif</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Déjeuner</span>
+                        <h3 class="item-title">Menu Dégustation</h3>
+                        <p class="item-desc">Voyage culinaire en 5 services, accord mets et vins</p>
+                        <span class="item-price">35 000 F</span>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-img">
+                        <img src="assets/boisons/cocktail coloré et savoureux.jpg" alt="Cocktails Signature">
+                        <span class="item-tag">Création</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Boissons</span>
+                        <h3 class="item-title">Cocktails Signature</h3>
+                        <p class="item-desc">Créations exclusives, fruits frais, spiritueux premium</p>
+                        <span class="item-price">7 500 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-img">
+                        <img src="assets/boisons/boissons fraîches.jpg" alt="Jus Frais">
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Boissons</span>
+                        <h3 class="item-title">Jus Frais Pressés</h3>
+                        <p class="item-desc">Fruits tropicaux pressés à la minute</p>
+                        <span class="item-price">4 500 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-img">
+                        <img src="assets/boisons/votre pause glace.jpg" alt="Pause Glacée">
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Boissons</span>
+                        <h3 class="item-title">Pause Glacée</h3>
+                        <p class="item-desc">Smoothies onctueux et milkshakes gourmands</p>
+                        <span class="item-price">5 500 F</span>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-img">
+                        <img src="assets/dessert/chocolat vanille.jpg" alt="Duo Chocolat Vanille">
+                        <span class="item-tag">Coup de cœur</span>
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Desserts</span>
+                        <h3 class="item-title">Duo Chocolat Vanille</h3>
+                        <p class="item-desc">Fondant chocolat grand cru, glace vanille bourbon</p>
+                        <span class="item-price">6 500 F</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-img">
+                        <img src="assets/dessert/désert.jpg" alt="Assiette Gourmande">
+                    </div>
+                    <div class="menu-item-content">
+                        <span class="item-category">Desserts</span>
+                        <h3 class="item-title">Assiette Gourmande</h3>
+                        <p class="item-desc">Sélection de nos meilleures créations sucrées</p>
+                        <span class="item-price">8 000 F</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-controls">
+            <button class="menu-nav prev" id="menuPrev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="menu-progress">
+                <div class="menu-progress-bar" id="menuProgress"></div>
+            </div>
+            <button class="menu-nav next" id="menuNext">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Kitchen Video Section -->
+    <section class="kitchen">
+        <div class="kitchen-video-wrapper">
+            <video autoplay muted loop playsinline class="kitchen-video">
+                <source src="assets/kitchen vibe videos/welcome to the kitchen.mp4" type="video/mp4">
+            </video>
+            <div class="kitchen-overlay"></div>
+        </div>
+        <div class="kitchen-content">
+            <span class="kitchen-tag">Dans les coulisses</span>
+            <h2 class="kitchen-title">
+                Welcome to<br>
+                <span class="text-italic">the Kitchen</span>
+            </h2>
+            <p class="kitchen-text">Découvrez l'art culinaire en action. Notre cuisine ouverte vous invite à vivre une expérience immersive.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="espace">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <span class="section-label">L'Espace</span>
+            </div>
+            <h2 class="section-title">
+                Un cadre<br>
+                <span class="text-stroke">d'exception</span>
+            </h2>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item-1">
+                <img src="assets/our place/our local 4.jpg" alt="Salle principale">
+                <div class="gallery-caption">
+                    <span>01</span>
+                    <h4>Salle Principale</h4>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-2">
+                <img src="assets/our place/our local 5.jpg" alt="Espace Lounge">
+                <div class="gallery-caption">
+                    <span>02</span>
+                    <h4>Espace Lounge</h4>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-3">
+                <img src="assets/our place/our local 6.jpg" alt="Terrasse">
+                <div class="gallery-caption">
+                    <span>03</span>
+                    <h4>Terrasse</h4>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-4">
+                <img src="assets/our place/our local 7.jpg" alt="Le Bar">
+                <div class="gallery-caption">
+                    <span>04</span>
+                    <h4>Le Bar</h4>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-5">
+                <img src="assets/our place/our local 8.jpg" alt="Détails">
+                <div class="gallery-caption">
+                    <span>05</span>
+                    <h4>Détails</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moments Section -->
+    <section class="moments" id="moments">
+        <div class="container">
+            <div class="moments-header">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <span class="section-label">Blog & Astuces</span>
+                </div>
+                <h2 class="section-title">
+                    Les secrets<br>
+                    <span class="text-stroke">des chefs</span>
+                </h2>
+            </div>
+
+            <div class="moments-grid">
+                <article class="moment-card moment-card-large">
+                    <div class="moment-media">
+                        <video muted loop playsinline poster="assets/petit déjeuner/petit dej.jpg">
+                            <source src="assets/blog astuces cuisine/le secret d'un petit dej reussi.mp4" type="video/mp4">
+                        </video>
+                        <button class="moment-play">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="moment-content">
+                        <span class="moment-tag">Vidéo</span>
+                        <h3>Le secret d'un petit-déjeuner réussi</h3>
+                        <p>Découvrez les techniques de nos chefs pour un réveil gourmand</p>
+                    </div>
+                </article>
+
+                <article class="moment-card">
+                    <div class="moment-media">
+                        <video muted loop playsinline poster="assets/déjeuner/pâte fraîches.jpg">
+                            <source src="assets/blog astuces cuisine/Le secret d'une pizza parfaite.mp4" type="video/mp4">
+                        </video>
+                        <button class="moment-play">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="moment-content">
+                        <span class="moment-tag">Vidéo</span>
+                        <h3>Le secret d'une pizza parfaite</h3>
+                    </div>
+                </article>
+
+                <article class="moment-card">
+                    <div class="moment-media">
+                        <img src="assets/recent events (subscribe to not miss the upcoming).jpg" alt="Événements">
+                    </div>
+                    <div class="moment-content">
+                        <span class="moment-tag">Événement</span>
+                        <h3>Nos prochains rendez-vous</h3>
+                    </div>
+                </article>
+
+                <article class="moment-card">
+                    <div class="moment-media">
+                        <img src="assets/pub card/chaque repas mérite d'être savouré avec le sourire.jpg" alt="Citation">
+                    </div>
+                    <div class="moment-content">
+                        <span class="moment-tag">Inspiration</span>
+                        <h3>Chaque repas mérite d'être savouré avec le sourire</h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-bg">
+            <img src="assets/anonce pop-up card/vos burger royal et délicieux sont disponibles. réserver.jpg" alt="Burgers">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="cta-content">
+            <span class="cta-tag">Nouveauté</span>
+            <h2 class="cta-title">
+                Nos Burgers Royaux<br>
+                <span class="text-italic">sont arrivés</span>
+            </h2>
+            <p class="cta-text">Découvrez notre nouvelle création gourmande, préparée avec des ingrédients d'exception</p>
+            <a href="#contact" class="btn-primary btn-light">
+                <span class="btn-text">Réserver maintenant</span>
+                <span class="btn-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-number">05</span>
+                        <span class="section-label">Contact</span>
+                    </div>
+                    <h2 class="section-title">
+                        Réservez votre<br>
+                        <span class="text-stroke">table</span>
+                    </h2>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </span>
+                            <div class="contact-text">
+                                <span class="contact-label">Téléphone</span>
+                                <a href="tel:+22527202830 61" class="contact-value">27 20 28 30 61</a>
+                                <a href="tel:+2250719480610" class="contact-value">07 19 48 06 10</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </span>
+                            <div class="contact-text">
+                                <span class="contact-label">Horaires</span>
+                                <span class="contact-value">Lundi - Vendredi</span>
+                                <span class="contact-value">7h30 - 19h00</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </span>
+                            <div class="contact-text">
+                                <span class="contact-label">Adresse</span>
+                                <span class="contact-value">Boulevard de la République</span>
+                                <span class="contact-value">Plateau, Abidjan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-input" placeholder=" " required>
+                                <label for="name" class="form-label">Nom complet</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" class="form-input" placeholder=" " required>
+                                <label for="phone" class="form-label">Téléphone</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" id="date" class="form-input" required>
+                                <label for="date" class="form-label form-label-static">Date</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="time" class="form-input" required>
+                                    <option value="" disabled selected>Heure</option>
+                                    <option value="07:30">07:30</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="guests" class="form-input" required>
+                                <option value="" disabled selected>Nombre de personnes</option>
+                                <option value="1">1 personne</option>
+                                <option value="2">2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                                <option value="6">6+ personnes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-input form-textarea" placeholder=" " rows="3"></textarea>
+                            <label for="message" class="form-label">Message (optionnel)</label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Envoyer la demande</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/logo/logo.png" alt="Brasserie du Parc" class="footer-logo">
+                    <p class="footer-tagline">L'élégance du Plateau</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Recevez nos actualités et offres exclusives</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Brasserie du Parc. Tous droits réservés.</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
